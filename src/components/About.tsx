@@ -111,7 +111,7 @@ const About = () => {
                   <span className="text-muted-foreground">{"// "}</span>
                   <span className="text-primary">status</span>
                   <span className="text-muted-foreground">: </span>
-                  <span className="text-green-400">"building"</span>
+                  <span className="text-green-500 dark:text-green-400">"building"</span>
                 </div>
               </div>
             </div>
