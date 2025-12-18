@@ -1,12 +1,15 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Settings } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+import { useAuth } from "@/hooks/useAuth";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { user, isAdmin } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,9 +54,25 @@ const Navigation = () => {
               </a>
             ))}
             <ThemeToggle />
-            <Button variant="hero" size="sm">
-              Get in Touch
-            </Button>
+            {isAdmin && (
+              <Link to="/admin">
+                <Button variant="ghost" size="sm">
+                  <Settings className="w-4 h-4 mr-2" />
+                  Admin
+                </Button>
+              </Link>
+            )}
+            {!user ? (
+              <Link to="/auth">
+                <Button variant="hero" size="sm">
+                  Sign In
+                </Button>
+              </Link>
+            ) : (
+              <Button variant="hero" size="sm">
+                Get in Touch
+              </Button>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -92,9 +111,26 @@ const Navigation = () => {
                   {link.label}
                 </a>
               ))}
-              <Button variant="hero" className="mt-2">
-                Get in Touch
-              </Button>
+              {isAdmin && (
+                <Link
+                  to="/admin"
+                  className="text-lg font-mono text-muted-foreground hover:text-primary transition-colors py-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Admin
+                </Link>
+              )}
+              {!user ? (
+                <Link to="/auth" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Button variant="hero" className="mt-2 w-full">
+                    Sign In
+                  </Button>
+                </Link>
+              ) : (
+                <Button variant="hero" className="mt-2">
+                  Get in Touch
+                </Button>
+              )}
             </div>
           </motion.div>
         )}
