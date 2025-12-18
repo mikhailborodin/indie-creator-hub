@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Logo and tagline */}
           <div className="text-center md:text-left">
             <div className="font-mono font-bold text-xl mb-2">
-              <span className="text-gradient">alex.dev</span>
+              <span className="text-gradient">mikhail.dev</span>
             </div>
             <p className="text-sm text-muted-foreground">
               Building products, sharing the journey.
@@ -52,7 +52,7 @@ const Footer = () => {
 
         {/* Bottom bar */}
         <div className="mt-8 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-          <p>© {currentYear} Alex Chen. All rights reserved.</p>
+          <p>© {currentYear} Mikhail Borodin. All rights reserved.</p>
           <p className="flex items-center gap-1">
             Made with <Heart className="w-4 h-4 text-destructive fill-destructive" /> and lots of coffee
           </p>

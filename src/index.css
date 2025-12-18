@@ -4,58 +4,59 @@
 
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
-/* Indie Hacker Dark Theme - Warm Amber Accents */
+/* Indie Hacker Theme - Light & Dark with Warm Amber Accents */
 
 @layer base {
   :root {
-    --background: 220 20% 4%;
-    --foreground: 45 20% 95%;
+    /* Light theme */
+    --background: 40 30% 98%;
+    --foreground: 220 20% 10%;
 
-    --card: 220 18% 8%;
-    --card-foreground: 45 20% 95%;
+    --card: 40 20% 96%;
+    --card-foreground: 220 20% 10%;
 
-    --popover: 220 18% 8%;
-    --popover-foreground: 45 20% 95%;
+    --popover: 40 20% 98%;
+    --popover-foreground: 220 20% 10%;
 
-    --primary: 38 92% 50%;
-    --primary-foreground: 220 20% 4%;
+    --primary: 38 92% 45%;
+    --primary-foreground: 40 30% 98%;
 
-    --secondary: 220 15% 15%;
-    --secondary-foreground: 45 20% 90%;
+    --secondary: 40 15% 92%;
+    --secondary-foreground: 220 20% 15%;
 
-    --muted: 220 15% 12%;
-    --muted-foreground: 220 10% 55%;
+    --muted: 40 15% 94%;
+    --muted-foreground: 220 10% 45%;
 
-    --accent: 38 92% 50%;
-    --accent-foreground: 220 20% 4%;
+    --accent: 38 92% 45%;
+    --accent-foreground: 40 30% 98%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 18%;
-    --input: 220 15% 18%;
-    --ring: 38 92% 50%;
+    --border: 40 15% 88%;
+    --input: 40 15% 88%;
+    --ring: 38 92% 45%;
 
     --radius: 0.75rem;
 
-    /* Custom tokens */
-    --glow-primary: 0 0 60px hsl(38 92% 50% / 0.3);
-    --glow-soft: 0 0 40px hsl(38 92% 50% / 0.15);
-    --gradient-hero: linear-gradient(135deg, hsl(38 92% 50% / 0.1), transparent);
-    --gradient-card: linear-gradient(145deg, hsl(220 18% 10%), hsl(220 18% 6%));
-    --gradient-text: linear-gradient(90deg, hsl(38 92% 60%), hsl(38 92% 45%));
+    /* Custom tokens - Light */
+    --glow-primary: 0 0 60px hsl(38 92% 50% / 0.2);
+    --glow-soft: 0 0 40px hsl(38 92% 50% / 0.1);
+    --gradient-hero: linear-gradient(135deg, hsl(38 92% 50% / 0.08), transparent);
+    --gradient-card: linear-gradient(145deg, hsl(40 20% 97%), hsl(40 20% 94%));
+    --gradient-text: linear-gradient(90deg, hsl(38 92% 40%), hsl(38 92% 30%));
 
     --font-mono: 'JetBrains Mono', monospace;
     --font-sans: 'Inter', system-ui, sans-serif;
 
-    --sidebar-background: 220 18% 6%;
-    --sidebar-foreground: 45 20% 95%;
-    --sidebar-primary: 38 92% 50%;
-    --sidebar-primary-foreground: 220 20% 4%;
-    --sidebar-accent: 220 15% 15%;
-    --sidebar-accent-foreground: 45 20% 90%;
-    --sidebar-border: 220 15% 18%;
-    --sidebar-ring: 38 92% 50%;
+    --sidebar-background: 40 20% 96%;
+    --sidebar-foreground: 220 20% 10%;
+    --sidebar-primary: 38 92% 45%;
+    --sidebar-primary-foreground: 40 30% 98%;
+    --sidebar-accent: 40 15% 92%;
+    --sidebar-accent-foreground: 220 20% 15%;
+    --sidebar-border: 40 15% 88%;
+    --sidebar-ring: 38 92% 45%;
   }
 
   .dark {
@@ -86,6 +87,13 @@
     --border: 220 15% 18%;
     --input: 220 15% 18%;
     --ring: 38 92% 50%;
+
+    /* Custom tokens - Dark */
+    --glow-primary: 0 0 60px hsl(38 92% 50% / 0.3);
+    --glow-soft: 0 0 40px hsl(38 92% 50% / 0.15);
+    --gradient-hero: linear-gradient(135deg, hsl(38 92% 50% / 0.1), transparent);
+    --gradient-card: linear-gradient(145deg, hsl(220 18% 10%), hsl(220 18% 6%));
+    --gradient-text: linear-gradient(90deg, hsl(38 92% 60%), hsl(38 92% 45%));
 
     --sidebar-background: 220 18% 6%;
     --sidebar-foreground: 45 20% 95%;
