@@ -183,8 +183,8 @@ const Projects = () => {
             viewport={{ once: true }}
             className="text-center mt-12"
           >
-            <Button variant="outline" size="lg">
-              View All Projects
+            <Button variant="outline" size="lg" asChild>
+              <a href="#projects">View All Projects</a>
             </Button>
           </motion.div>
         )}

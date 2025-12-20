@@ -61,12 +61,14 @@ const Hero = () => {
             transition={{ delay: 0.5 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
           >
-            <Button variant="hero" size="lg" className="group">
-              View Projects
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            <Button variant="hero" size="lg" className="group" asChild>
+              <a href="#projects">
+                View Projects
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </a>
             </Button>
-            <Button variant="glow" size="lg">
-              Read Blog
+            <Button variant="glow" size="lg" asChild>
+              <a href="#blog">Read Blog</a>
             </Button>
           </motion.div>
 
