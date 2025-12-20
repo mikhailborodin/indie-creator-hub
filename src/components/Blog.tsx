@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { format } from "date-fns";
 import { Skeleton } from "./ui/skeleton";
+import { Link } from "react-router-dom";
 
 const container = {
   hidden: { opacity: 0 },
@@ -78,44 +79,45 @@ const Blog = () => {
             ))
           ) : posts && posts.length > 0 ? (
             posts.map((post) => (
-              <motion.article
-                key={post.id}
-                variants={item}
-                className="group relative rounded-xl border border-border bg-card/50 backdrop-blur-sm p-6 hover:border-primary/50 transition-all duration-300 cursor-pointer"
-              >
-                {/* Hover gradient */}
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <Link to={`/blog/${post.slug}`} key={post.id}>
+                <motion.article
+                  variants={item}
+                  className="group relative rounded-xl border border-border bg-card/50 backdrop-blur-sm p-6 hover:border-primary/50 transition-all duration-300 cursor-pointer"
+                >
+                  {/* Hover gradient */}
+                  <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-4">
-                  {/* Content */}
-                  <div className="flex-1">
-                    {/* Title */}
-                    <h3 className="text-xl font-bold font-mono mb-2 group-hover:text-primary transition-colors">
-                      {post.title}
-                    </h3>
+                  <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-4">
+                    {/* Content */}
+                    <div className="flex-1">
+                      {/* Title */}
+                      <h3 className="text-xl font-bold font-mono mb-2 group-hover:text-primary transition-colors">
+                        {post.title}
+                      </h3>
 
-                    {/* Excerpt */}
-                    {post.excerpt && (
-                      <p className="text-muted-foreground text-sm line-clamp-2 mb-3">
-                        {post.excerpt}
-                      </p>
-                    )}
+                      {/* Excerpt */}
+                      {post.excerpt && (
+                        <p className="text-muted-foreground text-sm line-clamp-2 mb-3">
+                          {post.excerpt}
+                        </p>
+                      )}
 
-                    {/* Meta */}
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                      <span className="flex items-center gap-1.5">
-                        <Calendar className="w-4 h-4" />
-                        {format(new Date(post.created_at), "MMM d, yyyy")}
-                      </span>
+                      {/* Meta */}
+                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                        <span className="flex items-center gap-1.5">
+                          <Calendar className="w-4 h-4" />
+                          {format(new Date(post.created_at), "MMM d, yyyy")}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Arrow */}
+                    <div className="md:pl-4">
+                      <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
                     </div>
                   </div>
-
-                  {/* Arrow */}
-                  <div className="md:pl-4">
-                    <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
-                  </div>
-                </div>
-              </motion.article>
+                </motion.article>
+              </Link>
             ))
           ) : (
             <div className="text-center py-12 text-muted-foreground">
