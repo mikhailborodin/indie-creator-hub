@@ -132,8 +132,8 @@ const Blog = () => {
             viewport={{ once: true }}
             className="text-center mt-12"
           >
-            <Button variant="outline" size="lg">
-              View All Posts
+            <Button variant="outline" size="lg" asChild>
+              <a href="#blog">View All Posts</a>
             </Button>
           </motion.div>
         )}
