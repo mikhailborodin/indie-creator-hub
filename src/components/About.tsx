@@ -31,7 +31,7 @@ const About = () => {
 
             <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
               <p>
-                I'm a software engineer turned indie hacker. After spending 5 years 
+                I'm a software engineer turned indie hacker. After spending 10+ years
                 at big tech companies, I decided to take the leap and build my own products.
               </p>
               <p>
